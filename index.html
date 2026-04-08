@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA Neon Link</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        cursor: none;
+    }
+
+    /* 🔥 Background Grid GTA RP Style */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAuAAAALgCAIAAABav...");
+        background-size: cover;
+        filter: brightness(0.40) blur(2px);
+        animation: zoom 12s infinite alternate;
+        z-index: -3;
+    }
+
+    @keyframes zoom {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.15); }
+    }
+
+    /* Cyberpunk Particles */
+    .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: radial-gradient(circle, #ff003c, #8f00ff);
+        border-radius: 50%;
+        animation: float 6s infinite alternate ease-in-out;
+        opacity: 0.7;
+    }
+
+    @keyframes float {
+        from { transform: translateY(0px); opacity: .5; }
+        to   { transform: translateY(-50px); opacity: 1; }
+    }
+
+    /* Card */
+    .card {
+        width: 350px;
+        padding: 25px;
+        text-align: center;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(255, 0, 80, 0.5),
+                    0 0 35px rgba(120, 0, 255, 0.4);
+        animation: fadeIn 1.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Avatar melayang */
+    .pfp {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 5px solid #ff0088;
+        box-shadow: 0 0 30px #ff0077, 0 0 60px #8800ff;
+        margin-top: 10px;
+        animation: floatAvatar 3s infinite ease-in-out;
+    }
+
+    @keyframes floatAvatar {
+        0%   { transform: translateY(0px); }
+        50%  { transform: translateY(-12px); }
+        100% { transform: translateY(0px); }
+    }
+
+    h2 {
+        margin-top: 15px;
+        font-size: 27px;
+        color: white;
+        text-shadow: 0 0 10px #ff006a, 0 0 20px #9e00ff;
+    }
+
+    /* * * Tombol LINK GTA NEON * * */
+    .links {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .btn {
+        padding: 14px;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 14px;
+        letter-spacing: 1px;
+        background: linear-gradient(90deg, #ff0048, #7b00ff);
+        box-shadow: 0 0 15px #ff006a, 0 0 25px #8000ff;
+        transition: 0.25s ease;
+    }
+
+    .btn:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 35px #ff006a, 0 0 45px #a200ff;
+        filter: brightness(1.3);
+    }
+
+    /* Cursor warna-warni */
+    #cursor {
+        position: fixed;
+        width: 18px;
+        height: 18px;
+        background: radial-gradient(circle, #ff0077, #8f00ff);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 999;
+        mix-blend-mode: screen;
+        box-shadow: 0 0 25px #ff0099, 0 0 40px #8000ff;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div id="cursor"></div>
+
+<!-- Partikel -->
+<script>
+for (let i = 0; i < 40; i++) {
+    let p = document.createElement("div");
+    p.classList.add("particle");
+    p.style.left = Math.random() * 100 + "%";
+    p.style.top = Math.random() * 100 + "%";
+    p.style.animationDelay = (Math.random() * 5) + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+<div class="card">
+    <img class="pfp" src="https://tr.rbxcdn.com/30DAY-Avatar-3D4CF96C0A7CC06AFCB4895D9E46F00D-Png/720/720/Avatar/Webp/noFilter">
+
+    <h2>Razmi</h2>
+
+    <div class="links">
+        <a class="btn" href="https://instagram.com/nrazmi19">Instagram</a>
+        <a class="btn" href="https://tiktok.com/@nrazmi2">TikTok game</a>
+        <a class="btn" href="https://tiktok.com/@naufall02_">TikTok</a>
+        <a class="btn" href="https://youtube.com/nrazmi19">YouTube</a>
+        <a class="btn" href="https://saweria.co/Razmi">Saweria</a>
+    </div>
+</div>
+
+<!-- Cursor Movement -->
+<script>
+document.addEventListener("mousemove", (e) => {
+    const cursor = document.getElementById("cursor");
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+});
+</script>
+
+</body>
+</html>
